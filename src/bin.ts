@@ -4,7 +4,7 @@ import GlobbyCompress from './index'
 
 
 function start() {
-    yargs.command('globby-compress <zipFile> [patterns..]',
+    yargs.command('start <zipFile> [patterns..]',
         'compress files',
         {
         },

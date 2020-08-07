@@ -34,8 +34,8 @@ yarn add globby-compress
 ```
 npm i -g globby-compress 
 
-globby-compress <zipFilePath> [patterns..]
+globby-compress start <zipFilePath> [patterns..]
 
-globby-compress ./abc.zip **/*.js **/*.md
+globby-compress start ./abc.zip **/*.js **/*.md
 ```
  
