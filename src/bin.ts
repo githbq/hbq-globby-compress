@@ -30,8 +30,7 @@ function start() {
     let argv = yargs.version().argv
     if (!argv._.length) {
         yargs.showHelp()
-    }
-    return { argv, yargs }
+    } 
 }
 
 start()
