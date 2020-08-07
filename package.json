@@ -30,8 +30,8 @@
         "typescript": "^3.9.7"
     },
     "keywords": [
-        "typescript",
-        "module-polierplate",
+        "globby",
+        "compress",
         "globby-compress"
     ],
     "author": "hubiqing",
