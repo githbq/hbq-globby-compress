@@ -12,9 +12,9 @@ export default class GlobbyCompress {
     public patterns: Array<string>
     private archiver: archiver.Archiver
     private options: any
-    private zipFilePath: string
+    public zipFilePath: string
     private pathPatternAndOptions: Array<any> = []
-    constructor(zipFilePath, patterns, options) {
+    constructor(zipFilePath, patterns, options?) {
         this.files = []
         this.options = options
         this.zipFilePath = zipFilePath

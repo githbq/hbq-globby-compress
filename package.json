@@ -1,15 +1,16 @@
 {
     "name": "globby-compress",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "globby-compress",
     "main": "build/index.js",
+    "bin": {"globby-compress": "./build/bin.js"},
     "scripts": {
         "start:build": "npm run tsc && node build",
         "start": "node run",
         "test": "jest --forceExit --detectOpenHandles",
         "clear": "rimraf build",
         "tsc": "npm run clear && tsc",
-        "watch": "npm run tsc -- -w",
+        "tsc:w": "npm run tsc -- -w",
         "p": "npm run tsc && npm publish",
         "lint": "tslint \"src/**/*.ts\" --fix"
     },
@@ -17,12 +18,14 @@
         "archiver": "^4",
         "fs-extra": "^8",
         "globby": "^10",
-        "tslib": "^1.13.0"
+        "tslib": "^1.13.0",
+        "yargs": "^15.4.1"
     },
     "devDependencies": {
         "@types/archiver": "^3.1.0",
         "@types/fs-extra": "^9.0.1",
         "@types/node": "^12.12.53",
+        "@types/yargs": "^15.0.5",
         "jest": "^25.5.4",
         "rimraf": "^2.7.1",
         "ts-node": "^8.10.2",

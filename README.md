@@ -29,4 +29,13 @@ yarn add globby-compress
         console.error(e)
     }  
 ```
+
+## cli模式
+```
+npm i -g globby-compress 
+
+globby-compress <zipFilePath> [patterns..]
+
+globby-compress ./abc.zip **/*.js **/*.md
+```
  
