@@ -4,7 +4,7 @@
 
 ## 功能介绍
 1. 按需压缩目录,可以过滤不想要的文件如 node_modules ，可以多次添加目录
-2. 支持glob忽略规则 
+2. 支持多 glob pattern
 3. 基于 `globby` 与 `archiver`
 
 ## 安装
