@@ -18,14 +18,15 @@ yarn add globby-compress
   // 第一个参数指压缩包放置路径
   // 第二个参数为globby pattern参数,可以是单个pattern字符串，或者pattern字符串数组 ["**/*.js"]
   // 第三个参数 可选 globby options，如：{cwd,dot} ,默认 cwd 为 process.cwd()
-  const globbyCompress = new GlobbyCompress('./temp/temp1.zip', ['**/*.md', '!node_modules/**/*'])
+ const globbyCompress = new GlobbyCompress('./temp/temp1.zip',
+        ['**/*.md', '!node_modules/**/*'])
     try {
-        // 追加压缩目录
-        globbyCompress.add('**/*.ts') // 可以选填第二个参数 globby options
-        const infos = await globbyCompress.compress()
-        console.log(infos) // 返回压缩包文件体积
+        // 追加压缩信息
+        globbyCompress.add('**/*.ts')
+        const bytes = await globbyCompress.compress()
+        console.log(bytes) // 返回压缩包文件体积
     } catch (e) {
         console.error(e)
-    }   
+    }  
 ```
  

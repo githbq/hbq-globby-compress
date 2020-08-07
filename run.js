@@ -7,7 +7,8 @@ debugger
 //https://tslang.cn/docs/handbook/compiler-options.html
 
 (async () => {
-    const globbyCompress = new GlobbyCompress('./temp/temp1.zip', ['**/*.md', '!node_modules/**/*'])
+    const globbyCompress = new GlobbyCompress('./temp/temp1.zip',
+        ['**/*.md', '!node_modules/**/*'])
     try {
         // 追加压缩信息
         globbyCompress.add('**/*.ts')
