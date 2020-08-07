@@ -16,11 +16,11 @@ function start() {
             const globbyCompress = new GlobbyCompress(argv.zipFile, argv.patterns, { cwd: process.cwd() })
             try {
                 console.log('开始生成压缩包...')
-                console.time('生成压缩包完成，耗时:')
+                console.time('生成压缩包完成，耗时')
                 const size: any = await globbyCompress.compress()
                 console.log('压缩包文件地址:' + globbyCompress.zipFilePath)
                 console.log(`文件体积：${Math.ceil(size / 1000)}KB`)
-                console.timeEnd('生成压缩包完成，耗时:')
+                console.timeEnd('生成压缩包完成，耗时')
 
             } catch (e) {
                 console.error(`发生错误${e.message}`)
