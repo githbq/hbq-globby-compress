@@ -1,6 +1,6 @@
 {
     "name": "globby-compress",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "globby-compress",
     "main": "build/index.js",
     "bin": {"globby-compress": "./build/bin.js"},
