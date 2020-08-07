@@ -20,8 +20,8 @@ yarn add globby-compress
   // 第三个参数 可选 globby options，如：{cwd,dot} ,默认 cwd 为 process.cwd()
   const globbyCompress = new GlobbyCompress('./temp/temp1.zip', ['**/*.md', '!node_modules/**/*'])
     try {
-        // 追加压缩信息
-        globbyCompress.add('**/*.ts')
+        // 追加压缩目录
+        globbyCompress.add('**/*.ts') // 可以选填第二个参数 globby options
         const infos = await globbyCompress.compress()
         console.log(infos) // 返回压缩包文件体积
     } catch (e) {
