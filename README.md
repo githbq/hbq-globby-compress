@@ -1,13 +1,15 @@
 # globby-compress
 
 ## 功能介绍
-1. 按需压缩目录,可以过滤不想要的文件如 node_modules ，可以多次添加目录
+1. 按需压缩目录,提供过滤规则设置如 `!node_modules/**/*` ，支持多次添加目录
 2. 支持多 glob pattern
 3. 基于 `globby` 与 `archiver`
 
 ## 安装
 ```
 yarn add globby-compress 
+//or 
+npm install globby-compress 
 ```
 
 ## 使用   
