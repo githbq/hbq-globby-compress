@@ -1,7 +1,5 @@
 # globby-compress
 
-![my love](./logo.png) 
-
 ## 功能介绍
 1. 按需压缩目录,可以过滤不想要的文件如 node_modules ，可以多次添加目录
 2. 支持多 glob pattern
