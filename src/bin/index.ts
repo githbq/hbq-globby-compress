@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as  yargs from 'yargs'
-import GlobbyCompress from './index'
+import GlobbyCompress from '../index'
 
 
 function start() {
@@ -30,7 +30,7 @@ function start() {
     let argv = yargs.version().argv
     if (!argv._.length) {
         yargs.showHelp()
-    } 
+    }
 }
 
 start()

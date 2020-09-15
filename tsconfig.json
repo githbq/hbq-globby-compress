@@ -10,13 +10,17 @@
         "alwaysStrict": true,
         "sourceMap": true,
         "noEmit": false,
-        "noEmitHelpers": true,
+        "noEmitHelpers": false,
         "importHelpers": true,
         "strictNullChecks": false,
         "allowUnreachableCode": true,
         "newLine": "LF",
-        "lib": ["es2017"],
-        "typeRoots": ["node_modules/@types"],
+        "lib": [
+            "es2017"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
         "types": [
             "archiver",
             "fs-extra",
