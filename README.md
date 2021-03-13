@@ -23,8 +23,9 @@ npm install globby-compress
     try {
         // 追加压缩信息
         globbyCompress.add('**/*.ts')
-        const bytes = await globbyCompress.compress()
-        console.log(bytes) // 返回压缩包文件体积
+        // 执行压缩行为，函数返回值为zip文件的体积
+        const byteSize = await globbyCompress.compress()
+        console.log(byteSize) // 返回压缩包文件体积
     } catch (e) {
         console.error(e)
     }  
