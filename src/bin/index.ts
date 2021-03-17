@@ -10,7 +10,8 @@ function start() {
             log: {
                 alias: 'l',
                 boolean: true,
-                default: false
+                default: false,
+                describe: '是否打印过程日志信息'
             }
         },
         async (argv) => {
