@@ -1,9 +1,11 @@
 {
     "name": "globby-compress",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "description": "globby-compress",
     "main": "build/index.js",
-    "bin": {"globby-compress": "./build/bin"},
+    "bin": {
+        "globby-compress": "./build/bin/index.js"
+    },
     "scripts": {
         "start:build": "npm run tsc && node build",
         "start": "node run",
