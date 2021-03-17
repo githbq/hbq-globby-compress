@@ -37,6 +37,6 @@ npm i -g globby-compress
 
 globby-compress start <zipFilePath> [patterns..]
 
-globby-compress start ./abc.zip **/*.js **/*.md
+globby-compress start ./abc.zip **/*.js !node_modules !dist --log
 ```
  
