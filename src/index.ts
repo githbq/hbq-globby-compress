@@ -16,10 +16,14 @@ export default class GlobbyCompress {
     private pathPatternAndOptions: Array<any> = []
     constructor(zipFilePath, patterns, options?) {
         this.files = []
-        this.options = options
+        this.options = options || {}
+        this.options.cwd = options.cwd || process.cwd()
         this.zipFilePath = zipFilePath
         if (!/\.zip$/.test(zipFilePath)) {
             this.zipFilePath += '.zip'
+        }
+        if (!pathTool.isAbsolute(this.zipFilePath)) {
+            this.zipFilePath = pathTool.join(options.cwd, this.zipFilePath)
         }
         this.patterns = patterns
         this.options = {

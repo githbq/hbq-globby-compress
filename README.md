@@ -4,6 +4,7 @@
 1. 按需压缩目录,提供过滤规则设置如 `!node_modules/**/*` ，支持多次添加目录
 2. 支持多 glob pattern
 3. 基于 `globby` 与 `archiver`
+4. 将当前工程 `dist` 目录打成指定名称的压缩包, 全局安装后：`globby-compress dist project1`
 
 ## 安装
 ```
@@ -38,5 +39,6 @@ npm i -g globby-compress
 globby-compress start <zipFilePath> [patterns..]
 
 globby-compress start ./abc.zip **/*.js !node_modules !dist --log
+
 ```
  

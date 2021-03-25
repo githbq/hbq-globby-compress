@@ -20,6 +20,7 @@
         "archiver": "^4",
         "fs-extra": "^8",
         "globby": "^10",
+        "globby-copy-promise": "^1.1.2",
         "tslib": "^1.13.0",
         "yargs": "^15.4.1"
     },
@@ -41,6 +42,8 @@
     ],
     "author": "hubiqing",
     "repository": "https://github.com/githbq/hbq-globby-compress.git",
-    "engines": {"node": ">=8"},
+    "engines": {
+        "node": ">=8"
+    },
     "license": "MIT"
 }
