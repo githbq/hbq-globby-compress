@@ -11,6 +11,7 @@
 yarn add globby-compress 
 //or 
 npm install globby-compress 
+// 对应全局命令名 globby-compress 或者 简称 gbc
 ```
 
 ## 使用   
