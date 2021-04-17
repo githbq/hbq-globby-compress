@@ -2,6 +2,7 @@ import * as path from 'path'
 import GlobbyCompress from '../index'
 
 const cwd = process.cwd()
+
 const pathResolve = (pathStr) => {
     let newPathStr = pathStr
     if (!path.isAbsolute(pathStr)) {
@@ -19,6 +20,12 @@ export function start(yargs) {
                 boolean: true,
                 default: false,
                 describe: '是否打印过程日志信息'
+            },
+            dir: {
+                alias: 'd',
+                string: true,
+                default: null,
+                describe: '子压缩目录'
             }
         },
         async (argv) => {
@@ -26,8 +33,10 @@ export function start(yargs) {
                 argv.log && console.log(...args)
             }
 
-            argv.zipFile = (argv.zipFile as String).replace(/\.zip$/, '')
-            const globbyCompress = new GlobbyCompress(`${argv.zipFile}.zip`, [`**/*`,`!${argv.zipFile}.zip`], { cwd: process.cwd() })
+            argv.zipFile = (argv.zipFile as String).replace(/\.zip$/, '') + '.zip'
+            const cwd = process.cwd()
+            const absoluteZipFile = pathResolve(argv.zipFile)
+            const globbyCompress = new GlobbyCompress(absoluteZipFile, [`**/*`, `!${argv.zipFile}.zip`], { cwd: path.normalize(path.join(process.cwd(), argv.dir || '.')) })
             try {
                 consoleLog('开始生成压缩包...')
                 argv.log && console.time('生成压缩包完成，耗时')

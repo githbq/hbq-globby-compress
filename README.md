@@ -6,7 +6,7 @@
 3. 基于 `globby` 与 `archiver`
 4. 将当前工程 `dist` 目录打成指定名称的压缩包, 全局安装后：`gbc dist project1`
 5. 2021-4-17 新增解压 unzip 包命令: `gbc unzip <zipFile> ./` , 将 zip 文件解压到指定路径
-5. 2021-4-17 新增解压 zip 包命令: `gbc zip <zipFile>`  , 将当前目录下的所有文件压缩到指定文件,已排除zip文件自身
+5. 2021-4-17 新增解压 zip 包命令: `gbc zip <zipFile> --dir?=xxx`  , 将当前目录下的所有文件压缩到指定文件,已排除zip文件自身
 
 ## 安装
 ```
@@ -45,9 +45,9 @@ gbc start <zipFilePath> [patterns..]
 gbc start ./abc.zip **/*.js !node_modules !dist --log
 
 
-// 将当前目录下的文件压缩成 `xxx.zip`
+// 将当前目录下的文件压缩成 `xxx.zip` , 可选配置 `--dir` 参数指定子目录进行压缩
 
-gbc zip xxx.zip 
+gbc zip xxx.zip  --dir=dist 
 
 // 将当前目录下的 `yyy.zip` 文件解压到当前目录的 `./`
 
