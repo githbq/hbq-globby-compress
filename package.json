@@ -1,6 +1,6 @@
 {
     "name": "globby-compress",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "globby-compress",
     "publishConfig": {
         "registry": "https://registry.npmjs.org "
@@ -47,8 +47,6 @@
     ],
     "author": "hubiqing",
     "repository": "https://github.com/githbq/hbq-globby-compress.git",
-    "engines": {
-        "node": ">=8"
-    },
+    "engines": {"node": ">=8"},
     "license": "MIT"
 }

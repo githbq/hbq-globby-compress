@@ -1,18 +1,18 @@
-#!/usr/bin/env node
-import * as  yargs from 'yargs'
+import * as path from 'path'
 import GlobbyCompress from '../index'
 
-import * as dist from './dist'
-import * as zip from './zip'
-import * as unzip from './unzip'
+const cwd = process.cwd()
+const pathResolve = (pathStr) => {
+    let newPathStr = pathStr
+    if (!path.isAbsolute(pathStr)) {
+        newPathStr = path.normalize(path.join(cwd, newPathStr))
+    }
+    return newPathStr
+}
 
-function start() {
-    zip.start(yargs)
-    unzip.start(yargs)
-    dist.start(yargs)
-  
-    yargs.command('start <zipFile> [patterns..]',
-        'compress files',
+export function start(yargs) {
+    yargs.command('zip <zipFile>',
+        'zip cwd all files to <zipFile>',
         {
             log: {
                 alias: 'l',
@@ -25,12 +25,9 @@ function start() {
             const consoleLog = (...args) => {
                 argv.log && console.log(...args)
             }
-            if (((argv.patterns as any) || []).length === 0) {
-                console.log('提示：请填写第二个pattern参数如： **/*.js , 支持多个: *.js *.cs *.html')
-                return
-            }
+
             argv.zipFile = (argv.zipFile as String).replace(/\.zip$/, '')
-            const globbyCompress = new GlobbyCompress(`${argv.zipFile}.zip`, argv.patterns, { cwd: process.cwd() })
+            const globbyCompress = new GlobbyCompress(`${argv.zipFile}.zip`, [`**/*`,`!${argv.zipFile}.zip`], { cwd: process.cwd() })
             try {
                 consoleLog('开始生成压缩包...')
                 argv.log && console.time('生成压缩包完成，耗时')
@@ -43,11 +40,6 @@ function start() {
                 argv.log && console.error(`发生错误${e.message}`)
                 argv.log && console.error(e.stack)
             }
-        }).help()
-    let argv = yargs.version().argv
-    if (!argv._.length) {
-        yargs.showHelp()
-    }
-}
 
-start()
+        }).help()
+}
