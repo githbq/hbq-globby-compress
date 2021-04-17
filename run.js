@@ -1,6 +1,9 @@
 require('ts-node/register');
 
+process.chdir('D:\\temp\\jic-admin-test')
+
 require('./src/bin/index.ts');
+ 
 // const GlobbyCompress = require('./src/index.ts').default;
 // debugger
 // //tsconfig 帮助文档地址

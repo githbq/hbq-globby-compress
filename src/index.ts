@@ -39,8 +39,8 @@ export default class GlobbyCompress {
     }
     async getFiles() {
         const getFilesPromise = this.pathPatternAndOptions.map(
-            async ({ patterns, globOptions }) => {
-                const relativeFilePaths = await globby(patterns, { dot: true, ...globOptions, absolute: false, })
+            async ({ patterns, globOptions }) => { 
+                const relativeFilePaths = await globby(patterns, { dot: true, ...globOptions, absolute: false, cwd: globOptions.cwd }) 
                 this.files = this.files.concat(relativeFilePaths.map(relativeFilePath => ({ cwd: globOptions.cwd, relativeFilePath })))
             }
         )
