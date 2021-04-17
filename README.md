@@ -4,7 +4,8 @@
 1. 按需压缩目录,提供过滤规则设置如 `!node_modules/**/*` ，支持多次添加目录
 2. 支持多 glob pattern
 3. 基于 `globby` 与 `archiver`
-4. 将当前工程 `dist` 目录打成指定名称的压缩包, 全局安装后：`globby-compress dist project1`
+4. 将当前工程 `dist` 目录打成指定名称的压缩包, 全局安装后：`gbc dist project1`
+5. 2021-4-17 新增解压zip包命令: `gbc unzip xxx.zip ./`
 
 ## 安装
 ```

@@ -3,10 +3,11 @@ import * as  yargs from 'yargs'
 import GlobbyCompress from '../index'
 
 import * as dist from './dist'
-
+import * as unzip from './unzip'
 
 function start() {
     dist.start(yargs)
+    unzip.start(yargs)
     yargs.command('start <zipFile> [patterns..]',
         'compress files',
         {

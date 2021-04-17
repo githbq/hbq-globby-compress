@@ -1,6 +1,6 @@
 require('ts-node/register');
 
-process.chdir('D:\\temp\\jic-admin-test')
+process.chdir('C:\\Users\\hubiqing\\Desktop\\github-workspace\\hbq-globby-compress\\dist')
 
 require('./src/bin/index.ts');
  
