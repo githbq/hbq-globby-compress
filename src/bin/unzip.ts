@@ -32,6 +32,7 @@ export function start(yargs) {
 
             if (fs.pathExistsSync(zipFilePath)) {
                 await extract(zipFilePath, { dir: dirPath })
+                console.log(`解压 ${zipFilePath} 完成 , 对应目录 ${dirPath}`)
             } else {
                 console.log(`文件 ${zipFilePath} 不存在 , 请确认`)
             }
