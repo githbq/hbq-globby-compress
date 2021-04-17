@@ -1,6 +1,6 @@
 {
     "name": "globby-compress",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "globby-compress",
     "publishConfig": {
         "registry": "https://registry.npmjs.org "

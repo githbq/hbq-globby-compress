@@ -24,17 +24,15 @@ export function start(yargs) {
         },
         async (argv) => {
 
-            let zipFilePath = argv.zipFile
-            let dirPath = argv.dir
+            argv.zipFile = (argv.zipFile as String).replace(/\.zip$/, '') + '.zip'
+            argv.zipFile = pathResolve(argv.zipFile)
+            argv.dir = pathResolve(argv.dir)
 
-            zipFilePath = pathResolve(zipFilePath)  
-            dirPath = pathResolve(dirPath) 
-
-            if (fs.pathExistsSync(zipFilePath)) {
-                await extract(zipFilePath, { dir: dirPath })
-                console.log(`解压 ${zipFilePath} 完成 , 对应目录 ${dirPath}`)
+            if (fs.pathExistsSync(argv.zipFile)) {
+                await extract(argv.zipFile, { dir: argv.dir })
+                console.log(`解压 ${argv.zipFile} 完成 , 对应目录 ${argv.zipFile}`)
             } else {
-                console.log(`文件 ${zipFilePath} 不存在 , 请确认`)
+                console.log(`文件 ${argv.zipFile} 不存在 , 请确认`)
             }
 
         }).help()
